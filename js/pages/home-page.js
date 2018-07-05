@@ -1,6 +1,6 @@
 
-import mailApp from '../mail/mail-app-cmp.js'
-import keepApp from '../keep/keep-app-cmp.js'
+import mailApp from './mail-app.js'
+import keepApp from './keep-app.js'
 
 
 export default {
@@ -13,7 +13,7 @@ export default {
             <section class="home-page">
             <h1>sprint 3</h1>
             <keep-app></keep-app>
-            <mail-app></mail-app>
+            
             </section>
             `,
 

@@ -1,0 +1,26 @@
+/* **********keep- general********** */
+
+/* *******keep-text********* */
+.text-container {
+    border: 1px solid black;
+}
+
+.text-title {
+    font-weight: bold;
+}
+
+/* ********keep-image********** */
+
+.img-container {
+    border: 1px solid black;
+}
+.note-img {
+    width: 100px;
+    height: 100px;
+}
+
+/* **********keep-todo*************** */
+
+.todo-container {
+    border: 1px solid black;
+}
