@@ -1,6 +1,6 @@
 console.log('sprint3');
 
-import homePage from './cmps/general/home-page-cmp.js'
+import homePage from './pages/home-page.js'
 import myRoutes from './routes.js'
 
 
