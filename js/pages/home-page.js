@@ -10,10 +10,11 @@ export default {
     },
     
     template: `
-        <section class="home-page">
-        <h1>Mail:</h1>
-            <mail-app></mail-app>
-        </section>
-    `,
+            <section class="home-page">
+            <h1>sprint 3</h1>
+            <keep-app></keep-app>
+            
+            </section>
+            `,
 
 }
