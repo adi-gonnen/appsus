@@ -3,6 +3,10 @@
 .title {
     font-weight: bold;
 }
+
+.notes {
+    flex-direction: row;
+}
 /* *******keep-text********* */
 .text-container {
     border: 1px solid black;
@@ -18,8 +22,15 @@
     height: 100px;
 }
 
+
 /* **********keep-todo*************** */
 
 .todo-container {
+    border: 1px solid black;
+}
+
+/* *********add-note*********** */
+
+.modal-add-note {
     border: 1px solid black;
 }

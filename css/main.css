@@ -11,3 +11,7 @@ body {
 .column {
     flex-direction: column;
 }
+
+.btn {
+    cursor: pointer;
+}
