@@ -10,7 +10,7 @@ export default [
     // {path: '/about', component: about},
 
     // Email App -------------- 
-    {path: '/mail/:mailId', component: bookDetails},
+    // {path: '/mail/:mailId', component: bookDetails},
     {path: '/mail', component: mailApp},
 
     // Keep App -------------- 

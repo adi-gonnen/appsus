@@ -1,23 +1,14 @@
 
-import textService from '../../service/keep/text-service.js';
 
 export default {
-    template: `
+    props: ['title', 'data'],
+      template: `
             <section class="keep-text">
-                <div v-for="text in texts" class="text-container column flex">
-                    <div class="text-title">{{text.title}}</div>
-                    <div>{{text.body}}</div>
+                <div class="text-container column flex">
+                    <div class="title">{{title}}</div>
+                    <div class="text-body">{{data.text}}</div>
+
                 </div>
             </section>
-            `, 
-    data() {
-        return {
-            texts: textService.query()
-        }
-    },
-    methodes: {
-        loadTexts() {
-            
-        }
-    }
+            `
 }
