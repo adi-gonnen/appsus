@@ -12,14 +12,13 @@ export default {
     template: `
             <section class="add-note flex">
                 <p>add a new note:</p>
-                <!-- <input list="add-note" v-model="addType" type="txt" class="add-note" @onkeydown="addNote" placeholder="choose type of notes"> -->
                     <select id="add-note" v-model="addType" class="add-note" @onkeydown="addNote">
                         <option value="addText">memo</option>
                         <option value="addImg">image</option>
                         <option value="addTodo">list</option>
                     </select>
-                <!-- </input> -->
                 <component v-if="addType"
+                           :v-bind="id"
                            :is="addType"
                            class="new-notes flex">
                 </component>

@@ -19,7 +19,7 @@ export default {
                     <div class="title">{{data.title}}</div>
                     <div class="text-body">{{data.text}}</div>
                 </div>
-                <add-text v-if="showEdit"></add-text>
+                <add-text v-if="showEdit" v-bind:id="id"></add-text>
             </section>
             `,
             data() {
@@ -40,8 +40,7 @@ export default {
                     this.showEdit = true;
                     this.$emit('currNote', this.id);
                     console.log('id::', this.id);
-                    
-                    // keepService.changeNote(this.id);
+                    // keepService.removeNote(this.id);
                 }
         
             }

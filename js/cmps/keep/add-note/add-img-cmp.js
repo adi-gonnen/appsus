@@ -18,7 +18,7 @@ export default {
             note: {
                 type: 'noteImg',
                 id: utilsService.generateId(),
-                color: '#0000ff',
+                color: 'cc5b5b',
                 data: { 
                     title: '',
                     url: '',
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         addNote() {
-            keepService.addNewNote(this.note)
+            keepService.updateNote(this.note)
         }
     }
 }

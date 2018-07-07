@@ -27,6 +27,7 @@ export default {
             note: {
                 type: 'noteTodo',
                 id: utilsService.generateId(),
+                color: '#7790e0',
                 data: { 
                     title: '',
                     list: [],
@@ -41,7 +42,7 @@ export default {
             this.note = {
                 type: 'noteTodo',
                 id: utilsService.generateId(),
-                color: '#ff0000',
+                color: '##7790e0',
                 data: { 
                     title: '',
                     list: [],

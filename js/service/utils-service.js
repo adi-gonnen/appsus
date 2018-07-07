@@ -16,12 +16,18 @@ function generateId() {
     for (var i = 0; i < length; i++) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-
     return txt;
+}
+
+function getItemById(id, items) {
+	var item = items.find(item => item.id === id);
+    // return Promise.resolve(item);
+    return item;
 }
 
 export default {
     saveToStorage,
     loadFromStorage,
-    generateId
+    generateId,
+    getItemById
 }
