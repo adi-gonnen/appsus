@@ -18,6 +18,7 @@ export default {
             note: {
                 type: 'noteImg',
                 id: utilsService.generateId(),
+                color: '#0000ff',
                 data: { 
                     title: '',
                     url: '',

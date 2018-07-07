@@ -22,6 +22,7 @@ export default {
                                 :is="note.type" 
                                 v-bind:data="note.data"
                                 v-bind:id="note.id"
+                                v-bind:color="note.color"
                                 v-bind:key="note.id"
                                 class="notes flex">
                     </component>

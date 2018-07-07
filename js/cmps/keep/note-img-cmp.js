@@ -1,10 +1,10 @@
 import keepService from '../../service/keep-service.js';
 
 export default {
-    props: ['id', 'data'],
+    props: ['id', 'data', 'color'],
       template: `
             <section class="keep-img">
-                <div class="img-container column flex">
+                <div class="img-container column flex" :style="{'background-color':color}">
                     <div class="btns">
                         <button class="btn btn-pin" @click="pinNote">pin</button>
                         <button class="btn btn-delete" @click="deleteNote">delete</button>

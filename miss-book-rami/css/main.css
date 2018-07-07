@@ -1,0 +1,310 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/********** HELPERS **********/
+
+.price {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.text-red {
+	color: red;
+}
+
+.text-green {
+	color: green;
+}
+
+.read-more {
+	color: blue;
+	font-style: italic;
+	cursor: pointer;
+}
+
+.book-img {
+	position: relative;
+}
+
+.book-img img.sale {
+	width: 50px;
+	height: auto;
+	position: absolute;
+	right: -20px;
+	top: -20px;
+	transition: 1s;
+}
+
+/********** APP NAVIGATION **********/
+
+.nav-bar {
+	padding: 1em;
+	text-align: center;
+}
+
+.nav-bar a {
+	padding: 1em;
+	font-weight: bold;
+}
+
+.nav-bar .router-link-active {
+	color: green;
+}
+
+/********** BOOK APP **********/
+
+.home,
+.about,
+.book-app {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+/********** BOOK FILTER **********/
+
+.book-filter {
+	padding: 1.5em 2em;
+	margin-bottom: 1.5em;
+	background-color: #f6f6f6;
+	display: flex;
+	justify-content: space-between
+}
+
+.book-filter input,
+.book-filter select {
+	/* border: 0; */
+	padding: 0.5em 1em;
+	width: 125px;
+}
+
+.book-filter img.sort-direction {
+	width: 25px;
+	vertical-align: middle;
+}
+
+/********** BOOK FILTER **********/
+
+.book-list ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.book-list ul li {
+	flex: 0 0 150px;
+	padding: 0 0 1em;
+	margin-bottom: 1em;
+	background-color: #f9f9f9;
+	text-align: center;
+	font-size: 0.8em;
+	text-transform: capitalize;
+	transition: 1s;
+}
+
+.book-list ul li:hover {
+	background-color: #eee;
+	transform: scale(1.1);
+	z-index: 1;
+}
+
+.book-list ul li article {
+	display: flex;
+	flex-direction: column;
+}
+
+.book-list img.thumbnail {
+	display: block;
+	max-width: 100%;
+}
+
+/********** BOOK DETAILS **********/
+
+.book-details {
+	margin: 0 auto;
+	padding: 2em;
+	max-width: 850px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: #f6f6f6;
+}
+
+.book-details h2 {
+	font-size: 1.5em;
+	text-transform: capitalize;
+}
+
+.book-details div {
+	flex: 0 0 50%;
+}
+
+.book-details .book-img {
+	text-align: right;
+}
+
+/********** BOOK REVIEW **********/
+
+.review-list ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+/* .review-list ul li {
+	display: flex;
+	justify-content: space-between;
+} */
+
+.review-list button {
+	float: right;
+}
+
+.review-add label,
+.review-add button {
+	display: block;
+	margin-bottom: 1em;
+}
+
+.review-add input,
+.review-add select,
+.review-add textarea {
+	margin-bottom: 1em;
+	padding: 0.5em 1em;
+	width: 200px;
+	max-width: 100%;
+}
+
+/********** TABLET / MOBILE **********/
+
+@media (max-width: 1060px) {
+
+	.book-img img.sale {
+		left: 50%;
+		transform: translateX(-50%)
+	}
+	
+}
+
+@media (max-width: 750px) {
+
+	.book-filter {
+		flex-direction: column;
+	}
+
+	.book-filter div {
+		padding-bottom: 1em;
+	}
+
+	.book-filter label {
+		display: inline-block;
+		width: 150px;
+	}
+
+	.book-details {
+		flex-direction: column;
+	}
+
+	.book-details .book-img {
+		text-align: left;
+		order: -1;
+	}
+
+}
+
+
+.alert {
+	padding: 1em;
+	background-color: lightgrey;
+	margin: 0.5em;
+}
+
+.alert-success {
+	background-color: lightgreen;
+}
+.alert-warning {
+	background-color: orange;
+}
+
+.alert-danger {
+	background-color: lightcoral;
+}
+
+.fademe-enter {
+	opacity: 0;
+  }
+  
+.fademe-enter-active {
+	transition: all 1s;
+}
+
+.fademe-leave-active {
+	transition: opacity 1s;
+	opacity: 0;
+}
+
+.slide-enter {
+	opacity: 0;
+	/*transform: translateY(20px);*/
+  }
+  
+  .slide-enter-active {
+	animation: slide-in 1s ease-out forwards;
+	transition: opacity .5s;
+  }
+  
+  .slide-leave {}
+  
+  .slide-leave-active {
+	animation: slide-out 1s ease-out forwards;
+	transition: opacity 1s;
+	opacity: 0;
+  
+  }
+  
+
+  @keyframes slide-in {
+	from {
+	  transform: translateY(20px);
+	}
+	to {
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes slide-out {
+	from {
+	  transform: translateY(0);
+	}
+	to {
+	  transform: translateY(20px);
+	}
+  }
+  
+  

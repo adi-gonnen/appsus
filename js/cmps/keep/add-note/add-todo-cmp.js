@@ -11,6 +11,7 @@ export default {
                         <ul v-for="(item,index) in note.data.list" class="todo-list">
                             <li>
                               <input class="text-title" v-model="note.data.list[index]"></input>
+                              <button class="btn btn-delete-line" :index="index" @click="deleteLine">X</button>
                             </li>
                         </ul>
                         <div class="btns-list flex">
@@ -35,20 +36,26 @@ export default {
     },
     methods: {
         addNote() {
-            keepService.addNewNote(this.note);
-            console.log('note: ', this.note);
+            keepService.updateNote(this.note);
+            // console.log('note: ', this.note);
             this.note = {
                 type: 'noteTodo',
                 id: utilsService.generateId(),
+                color: '#ff0000',
                 data: { 
                     title: '',
                     list: [],
                     }
             };
-            console.log('note: ', this.note);
+            // console.log('note: ', this.note);
         },
         addLine() {
             this.note.data.list.push('');
+        },
+        deleteLine() {
+            console.log('index: ', this.index, this.value);
+            
+            this.note.data.list.splice(this.index, 1);
         }
     }
 }

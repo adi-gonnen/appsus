@@ -2,10 +2,10 @@
 import keepService from '../../service/keep-service.js';
 
 export default {
-    props: ['id', 'data'],
+    props: ['id', 'data', 'color'],
     template: `
             <section class="keep-todo">
-            <div class="todo-container column flex">
+            <div class="todo-container column flex" :style="{'background-color':color}">
                 <div class="btns">
                     <button class="btn btn-pin" @click="pinNote">pin</button>
                     <button class="btn btn-delete" @click="deleteNote">delete</button>
@@ -20,7 +20,7 @@ export default {
             `,
     methods: {
         deleteNote() {
-            keepService.removeNote(id);
+            keepService.removeNote(this.id);
             // console.log('id:::', id);
             
         },

@@ -7,6 +7,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
+        color: '#00ff00',
         data: { 
             title: ':-)',
             text: 'Have A Nice Day',
@@ -15,6 +16,7 @@ var gDefaultNotes = [
     {
         type: 'noteImg',
         id: utilsService.generateId(),
+        color: '#0000ff',
         data: { 
             title: 'still optimistic',
             url: '././img/us.jpg',
@@ -23,6 +25,7 @@ var gDefaultNotes = [
     {
         type: 'noteTodo',
         id: utilsService.generateId(),
+        color: '#ff0000',
         data: { 
             title: 'things to do before vacation', 
             list: ['book hotels', 'insurance', 'hire a car'],
@@ -31,6 +34,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
+        color: '#00ff00',
         data: { 
             title: 'important!',
             text: 'go to the beach this weekend',
@@ -39,6 +43,7 @@ var gDefaultNotes = [
     {
         type: 'noteTodo',
         id: utilsService.generateId(),
+        color: '#ff0000',
         data: { 
             title: 'to buy',
             list: ['milk', 'banana', 'bread'],
@@ -47,6 +52,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
+        color: '#00ff00',
         data: { 
             title: 'summer vacation', 
             text: 'needs to find a location',
@@ -77,7 +83,7 @@ function moveNoteUp(id) {
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
 
-function addNewNote(note) {
+function updateNote(note) {
     // console.log(note);
     gNotes.unshift(note);
     utilsService.saveToStorage(NOTES_KEY, gNotes);
@@ -88,5 +94,6 @@ export default {
     query,
     removeNote,
     moveNoteUp,
-    addNewNote
+    updateNote
+
 }
