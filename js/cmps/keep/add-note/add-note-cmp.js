@@ -27,12 +27,13 @@ export default {
             `,
     data: () => {
             return {
-                addType: null
+                addType: null,
+                showNotes: true
             }
     },
     methods: {
         addNote() {
-           
+           this.$emit('showNotes', false)
         }
     }
     

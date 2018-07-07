@@ -65,7 +65,7 @@ function query() {
 
 function removeNote(id) {
     var index = gNotes.findIndex(note => note.id === id);
-    console.log('id', id, 'index:', index);
+    // console.log('id', id, 'index:', index);
     gNotes.splice(index,1);
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
@@ -78,7 +78,7 @@ function moveNoteUp(id) {
 }
 
 function addNewNote(note) {
-    console.log(note);
+    // console.log(note);
     gNotes.unshift(note);
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }

@@ -18,8 +18,8 @@ export default {
             `,
             methods: {
                 deleteNote() {
-                    keepService.removeNote(id);
-                    // console.log('id:::', id);
+                    keepService.removeNote(this.id);
+                    // console.log('id:::', this.id);
                     
                 },
                 pinNote() {

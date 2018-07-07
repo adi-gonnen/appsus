@@ -17,7 +17,7 @@ export default {
     template: `
             <section>
                 <add-note></add-note>
-                <div class="keep-app flex">
+                <div class="keep-app flex" v-if="showNotes">
                     <component  v-for="note in notes" 
                                 :is="note.type" 
                                 v-bind:data="note.data"
@@ -30,7 +30,8 @@ export default {
             `,
     data() {
         return {
-            notes: keepService.query()
+            notes: keepService.query(),
+            showNotes: true
         }
     }
 }
