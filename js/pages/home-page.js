@@ -24,7 +24,7 @@ export default {
                     </nav>
                 </section>
                 <main class="main-container">
-                    <div class="call-app">Every thing you need in one package.</div>
+                    <div class="call-app">Everything you need in one package.</div>
                     <div class="images-container flex align-end">
                         
                         <div class="email-img-container flex column">

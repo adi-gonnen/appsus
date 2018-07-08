@@ -58,7 +58,6 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
-<<<<<<< HEAD
   
   .align-end {
     align-items: flex-end;
@@ -101,6 +100,10 @@
 .nav-bar li{
   margin:0 10px;
   cursor: pointer;
+}
+
+.nav-bar li:hover{
+  color:#51CBFE;
 }
 
 /* Body ------------ */
@@ -147,12 +150,3 @@
 .images-container h4{
   font-weight: 100;
 }
-=======
-
-  .opacity {
-    opacity: 0.1;
-  }
-  .btn {
-      cursor: pointer;
-  }
->>>>>>> b51aaa9445f4dd8b4769106eca498057e189274e
