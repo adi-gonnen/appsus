@@ -57,8 +57,25 @@ var gDefaultNotes = [
             title: 'summer vacation', 
             text: 'needs to find a location',
             }
+    },
+    {
+        type: 'noteImg',
+            id: utilsService.generateId(),
+            color: '#e49198',
+            data: { 
+                title: 'world cup',
+                url: '././img/worldcup.png',
+            }
+    },
+    {
+        type: 'noteText',
+        id: utilsService.generateId(),
+        color: '#80bbc5',
+        data: { 
+            title: 'beer!!', 
+            text: 'drink it cold',
+        }
     }
-
 ];
 
 function query() {
@@ -85,10 +102,10 @@ function moveNoteUp(id) {
 
 function addNewNote(note) {
     gNotes.unshift(note);
-    // utilsService.saveToStorage(NOTES_KEY, gNotes);
+    utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
 
-function updateNote(note) {
+function saveAllNotes() {
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
 
@@ -96,9 +113,13 @@ function getNoteById(id) {
     return utilsService.getItemById(id, gNotes);
 }
     
-function getNote() {
-    gNotes = utilsService.loadFromStorage(NOTES_KEY);
-    // return utilsService.getNoteById(id, gNotes)
+function loadNoteById(id) {
+    var notes = utilsService.loadFromStorage(NOTES_KEY);
+    var loadedNote = utilsService.getItemById(id, notes);
+    utilsService.setItemById(id, gNotes, loadedNote);
+    console.log('new', loadedNote);
+    utilsService.saveToStorage(NOTES_KEY, notes);
+    return loadedNote;
 }
 export default {
     query,
@@ -106,6 +127,6 @@ export default {
     moveNoteUp,
     addNewNote,
     getNoteById,
-    updateNote,
-    getNote
+    saveAllNotes,
+    loadNoteById
 }

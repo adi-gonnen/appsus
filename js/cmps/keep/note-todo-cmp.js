@@ -1,18 +1,17 @@
 
-import keepService from '../../service/keep-service.js';
-import addTodo from './add-note/add-todo-cmp.js';
-import noteBtns from './note-btns-cmp.js';
+import editTodo from './edit-note/edit-todo-cmp.js';
+import editModal from './edit-modal-cmp.js';
 
 export default {
-    mixins: [noteBtns],
+    mixins: [editModal],
     components: {
-        addTodo
+        editTodo
     },
     props: ['id', 'data', 'color'],
     template: `
             <section class="keep-todo">
                 <div class="todo-container note column flex" :style="{'background-color':color}">
-                    ${noteBtns.template}
+                    ${editModal.template}
                     <div v-if="!showEdit">
                         <div class="note-title">{{data.title}}</div>
                         <ul v-for="item in data.list" class="note-ul">
@@ -27,7 +26,7 @@ export default {
             `,
     data() {
         return {
-            addCmpName : 'add-todo'
+            addCmpName : 'edit-todo'
         }
     },
 }

@@ -1,17 +1,17 @@
 
-import addText from './add-note/add-text-cmp.js';
-import noteBtns from './note-btns-cmp.js';
+import editText from './edit-note/edit-text-cmp.js';
+import editModal from './edit-modal-cmp.js';
 
 export default {
-    mixins: [noteBtns],
+    mixins: [editModal],
     components: {
-        addText
+        editText
     },
     props: ['id', 'data', 'color'],
     template: `
         <section class="keep-text">
             <div class="text-container note column flex" :style="{'background-color':color}">
-                ${noteBtns.template}
+                ${editModal.template}
                 <div v-if="!showEdit">
                     <div class="note-title">{{data.title}}</div>
                     <div class="text-body">{{data.text}}</div>
@@ -21,7 +21,7 @@ export default {
         `,
     data() {
         return {
-            addCmpName : 'add-text'
+            addCmpName : 'edit-text'
         }
     }
         

@@ -4,7 +4,7 @@ import keepService from '../service/keep-service.js';
 import noteTodo from '../cmps/keep/note-todo-cmp.js'
 import noteImg from '../cmps/keep/note-img-cmp.js'
 import noteText from '../cmps/keep/note-text-cmp.js'
-import addNote from '../cmps/keep/add-note/add-note-cmp.js'
+import editNote from '../cmps/keep/edit-note/edit-note-cmp.js'
 import searchNote from '../cmps/keep/search-note-cmp.js'
 
 
@@ -13,7 +13,7 @@ export default {
         noteTodo,
         noteImg,
         noteText,
-        addNote,
+        editNote,
         searchNote
     },
     template: `
@@ -21,10 +21,9 @@ export default {
                 <div><button class="exit-keep" @click="exitKeepApp">X</button></div>
                 <div class="search-add-container flex">
                     <search-note @searched="setSearch"></search-note>
-                    <add-note></add-note>
+                    <edit-note></edit-note>
                 </div>
                 <div class="keep-app flex" v-if="showNotes">
-                <!-- <router-link to="'/keep'"> -->
                     <component  :notes="notesToShow" v-for="note in notesToShow" 
                     :is="note.type" 
                     v-bind:data="note.data"
@@ -33,7 +32,6 @@ export default {
                     v-bind:key="note.id"
                     class="notes flex">
                     </component>
-                <!-- </router-link> -->
                 </div>
             </section>
             `,
@@ -66,7 +64,6 @@ export default {
         },
         exitKeepApp() {
             this.$router.push('/')
-        }
-
+        },
     },
 }

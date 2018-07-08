@@ -37,11 +37,8 @@ export default {
                             <h2>Create</h2>
                             <h4>Every thing you need to bring your project to life.</h4>
                         </div>
-                        <!-- <div class="email-img"></div>
-                        <div class="keeper-img"></div> -->
                     </div>
                 </main>
-            <!-- <nav-bar></nav-bar>      -->
             </section>
             `,
             methods: {

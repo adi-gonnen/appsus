@@ -21,13 +21,18 @@ function generateId() {
 
 function getItemById(id, items) {
 	var item = items.find(item => item.id === id);
-    // return Promise.resolve(item);
     return item;
 }
+
+function setItemById(id, items, newItem) {
+    items.forEach((item, idx) => {if (item.id===id) items[idx] = newItem;});
+}
+
 
 export default {
     saveToStorage,
     loadFromStorage,
     generateId,
-    getItemById
+    getItemById,
+    setItemById
 }

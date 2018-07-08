@@ -57,7 +57,6 @@ var emails = [
 
 
 // Get emails from storage:
-// var emailStorage = loadFromStorage('emails') === null? null : loadFromStorage('emails');
 var emailStorage =  utilsService.loadFromStorage('emails')
 if (emailStorage) {
   emails = emailStorage

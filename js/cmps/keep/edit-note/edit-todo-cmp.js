@@ -1,8 +1,11 @@
 
 import utilsService from '../../../service/utils-service.js';
 import keepService from '../../../service/keep-service.js';
+import btnsEdit from './btns-edit-cmp.js';
+
 
 export default {
+    mixins: [btnsEdit],
     props: ['id'],
     template: `
             <section class="add-text flex">
@@ -18,12 +21,8 @@ export default {
                         <button class="btn btn-add-list" @click="addLine">
                             <i class="fas fa-plus"></i>
                         </button>
-                        <div class="btn-container flex">
-                            <input type="color" class="pick-color" value="#ff0000" v-on:input="note.color = $event.target.value" placeholder="write your color"/>
-                            <button class="btn btn-add-note" @click="addNote">update</button>
-                            <button class="btn btn-cancel-note" @click="cancelUpdate">cancel</button>
-                        </div>
                     </div>
+                    ${btnsEdit.template}
                 </div>
             </section>
             `,
@@ -47,22 +46,12 @@ export default {
             }
         },
     methods: {
-        addNote() {
-            if (!this.id) keepService.addNewNote(this.note);
-            keepService.updateNote(this.note);
-            this.$emit('hideModal', false);      
-            },
-        cancelUpdate() {
-            this.$emit('hideModal', false);
-        },
-        changeColor() {
-            this.color = $emit.target
-            console.log($emit.target.value);
-        },
         addLine() {
             this.note.data.list.push('');
         },
-    
+        deleteLine(index) {
+            this.note.data.list.splice(index,1);
+        }
     }
 }
 

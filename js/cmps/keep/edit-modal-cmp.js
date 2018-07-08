@@ -1,19 +1,20 @@
 import keepService from '../../service/keep-service.js';
 
+
 export default {
   template: `
     <section class="note-btn">
-    <div class="notes-btns flex">
+      <div class="notes-btns flex">
         <button class="btn btn-note btn-pin" @click="pinNote"><i class="fas fa-thumbtack"></i></button>
         <button class="btn btn-note btn-delete" @click="deleteNote"><i class="fas fa-trash-alt"></i></button>
         <button class="btn btn-note btn-edit" @click="editNote"><i class="fas fa-edit"></i></button>
-    </div>
-    <component 
-      v-if="showEdit" 
-      :id="id"
-      @showEdit="hideModal"
-      :is="addCmpName">
-    </component>
+      </div>
+      <component 
+        v-if="showEdit" 
+        :id="id"
+        @hide="hideModal"
+        :is="addCmpName">
+      </component>
     </section>`,
   data() {
     return {
@@ -30,9 +31,7 @@ export default {
     },
     editNote() {
       this.showEdit = true;
-      // this.$emit('id', this.id);
       console.log('id::', this.id);
-      // keepService.removeNote(this.id);
     },
     hideModal(bool) {
       console.log('******');
@@ -41,6 +40,4 @@ export default {
 
   }
 }
-    
-    //it was in note-text below btns:
-//<add-text v-if="showEdit" v-bind:id="id"></add-text>
+   
