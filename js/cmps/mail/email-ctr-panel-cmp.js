@@ -1,6 +1,6 @@
 
 import emailSercive from '../../service/email-service.js'
-import eventBus, {EVENT_UPDATE_UNREAD} from '../../service/event-bus-service.js'
+import eventBus, {EVENT_UPDATE_UNREAD, EVENT_UPDATE_TOGGLE} from '../../service/event-bus-service.js'
 
 export default {
     name: 'ctr-panel',
@@ -14,11 +14,18 @@ export default {
 
             <div class="e-panel-container">
                 <div class="e-exit-app">
-                    <button><i class="fas fa-times"></i></button>
+                    <button><i @click="exiteMailApp" class="fas fa-times"></i></button>
                 </div>
-                <div class="e-nav-app">
-                    <button class="e-trash" @click="deleteEmail"><i class="fas fa-trash-alt"></i></button>
-                    <button class="e-new" @click="newEmail"> <i class="fas fa-external-link-alt"></i></button>
+                <div class="e-nav-app flex space-between align-center">
+                    <div>
+                        <button class="e-trash" @click="deleteEmail"><i class="fas fa-trash-alt"></i></button>
+                        <button class="e-new" @click="newEmail"> <i class="fas fa-external-link-alt"></i></button>
+                    </div>
+                    <div>
+                        <span @click="changeToggleMenu" :class="{'e-circle-open': toggleMenu}" class="e-circle-container flex align-center">
+                            <span class="e-circle" :class="{'e-circle-color' : toggleMenu}"></span>
+                        </span>
+                    </div>
                 </div>
                 <div class="e-count">
                     <hr />
@@ -30,6 +37,7 @@ export default {
     data() {
         return {
             emailCount: null,
+            toggleMenu: false,
         }
     },
     created() {
@@ -48,6 +56,13 @@ export default {
         },
         newEmail() {
             this.$emit('newEmail')
+        },
+        changeToggleMenu() {
+            this.toggleMenu = !this.toggleMenu
+            eventBus.$emit(EVENT_UPDATE_TOGGLE)
+        },
+        exiteMailApp() {
+            this.$router.push('/')
         }
     },
 }

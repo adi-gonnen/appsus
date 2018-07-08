@@ -57,8 +57,91 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
-
+  
+  .align-end {
+    align-items: flex-end;
+  }
 
 .btn {
     cursor: pointer;
+}
+
+
+/* Home Page ------------- */
+.home-page {
+  height: 100vh;
+  background-color: #FAFAFA;
+}
+/* Header ---------- */
+.h-logo {
+  padding:10px;
+  font-size: 2rem;
+  height: 2.3em;
+  background-color: #FAFAFA;
+  margin: 0;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.logo-char {
+  font-size: 2.5rem;
+  color: #51CBFE;
+  font-weight: bold;
+}
+
+
+/* Nav Bar ---------- */
+.nav-bar {
+  height: 40px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px #888888;
+}
+
+.nav-bar li{
+  margin:0 10px;
+  cursor: pointer;
+}
+
+/* Body ------------ */
+.main-container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.call-app {
+  font-size: 2rem;
+  margin-top: 50px;
+  font-weight: 100;
+}
+
+
+.images-container {
+  margin-top: 50px;
+} 
+
+.email-img {
+  width: 400px;
+  border: 20px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px #888888;
+}
+
+.keeper-img-container {
+  margin-left: 100px;
+}
+
+.keeper-img {
+  width: 300px;
+  border: 20px solid #fff;
+  border-radius: 10px;
+  /* margin-left: 100px;/ */
+  box-shadow: 0 1px 5px #888888;
+}
+
+.images-container h2{
+  font-weight: 100;
+  margin-top: 50px;
+}
+
+.images-container h4{
+  font-weight: 100;
 }

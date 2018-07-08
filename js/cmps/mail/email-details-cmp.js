@@ -1,7 +1,7 @@
 
 
 import emailSercive from '../../service/email-service.js'
-import eventBus, {EVENT_UPDATE_EMAILS} from '../../service/event-bus-service.js'
+import eventBus, {EVENT_UPDATE_EMAILS, EVENT_UPDATE_TOGGLE} from '../../service/event-bus-service.js'
 
 
 export default {
@@ -11,7 +11,7 @@ export default {
         eventBus,
     },
     template: `
-        <section v-if="email">
+        <section :class="{'e-details-container-mobile': detailsToggle}" v-if="email">
             <div class="e-details-header">
                 <div class="e-details-header-name flex space-between">
                     <span class="e-name">{{email.name}}</span>
@@ -27,12 +27,16 @@ export default {
     data() {
         return {
           email: null,
+          detailsToggle: false
         }
     },
     created() {
         this.loadFirstIdxEmail(),
         eventBus.$on(EVENT_UPDATE_EMAILS, () => {
             this.loadFirstIdxEmail()
+        })
+        eventBus.$on(EVENT_UPDATE_TOGGLE, () => {
+            this.detailsToggle = !this.detailsToggle
         })
     },
     watch: {

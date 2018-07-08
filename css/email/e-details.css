@@ -24,3 +24,11 @@
   margin-top: 15px;
   line-height: 1.3em;
 }
+
+@media(max-width: 850px) {
+
+  .e-details-container-mobile {
+      display: none;
+  }
+  
+} 

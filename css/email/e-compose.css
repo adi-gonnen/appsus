@@ -1,0 +1,28 @@
+
+
+.new-mail {
+  background-color: #262626;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 5px #888888;
+}
+
+.mail-form {
+  width: 400px;
+}
+
+.new-mail-btn {
+  /* margin-bottom: 10px; */
+  cursor: pointer;
+}
+
+.txt-area-new {
+  min-height: 130px;
+}
+
+.mail-btn {
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 
 import emailService from '../../service/email-service.js'
 import emailPreview from './email-preview-cmp.js'
+import eventBus, {EVENT_UPDATE_TOGGLE} from '../../service/event-bus-service.js'
 
 export default {
     name: 'mail-list',
@@ -10,7 +11,7 @@ export default {
     },
     props: ['emails'],
     template: `
-            <section>
+            <section :class="{'e-filter-list-container-mobile': menuToggle}">
                 <ul>
                     <li v-for="(email, idx) in emails">
                         <router-link :to="'/mail/' + email.id">
@@ -20,6 +21,16 @@ export default {
                 </ul>
             </section>
     `,
+    data() {
+        return {
+            menuToggle: false,
+        }
+    },
+    created() {
+        eventBus.$on(EVENT_UPDATE_TOGGLE, () => {
+            this.menuToggle = !this.menuToggle
+        })   
+    },
     methods: {
         handler(mail, emailId, idx) {
             this.emailRead(emailId)

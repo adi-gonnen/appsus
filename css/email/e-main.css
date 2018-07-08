@@ -3,6 +3,7 @@
 @import './e-details.css';
 @import './e-prev.css';
 @import './e-prog-bar.css';
+@import './e-compose.css';
 
 .mail-app {
   /* height: 100%; */

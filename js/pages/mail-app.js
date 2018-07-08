@@ -121,6 +121,7 @@ export default {
             console.log(email);
             emailService.addMail(email)
                 .then(() => this.loadEmails())
+                this.sendEmailWindow = false
         }
     }
 }

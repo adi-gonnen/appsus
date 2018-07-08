@@ -44,3 +44,28 @@
 .e-count {
   font-size: 0.9em;
 }
+
+.e-circle-container {
+  width: 40px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.e-circle {
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #FE5E57;
+  transition: 0.3s;
+}
+
+.e-circle-open {
+  justify-content: flex-end;
+}
+
+.e-circle-color{
+  background-color: #51CBFE;
+}
