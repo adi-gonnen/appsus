@@ -38,7 +38,6 @@ export default {
                     <li>cancel button</li>
                     <li>delete confirm alert</li>
                     <li>clear modal after update</li>
-                    <li>collect buttons to one component</li>
                     <li>add promises</li>
                     <li>search</li>
                     <li>design!!!</li>

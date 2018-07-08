@@ -5,7 +5,7 @@ import keepService from '../../../service/keep-service.js';
 
 
 export default {
-    props: ['id'],
+    props: ['id','showEdit'],
     template: `
             <section class="add-text flex">
                 <div class="modal-add-note flex">
@@ -53,7 +53,7 @@ methods: {
         //move to created- decition if edit or creat new
         if (!this.id) keepService.addNewNote(this.note);
         keepService.updateNote(this.note);
-        this.$emit('completeEdit', false)        
+        this.$emit('hide-modal', false)        
         },
         cancelUpdate() {
 
