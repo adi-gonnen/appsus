@@ -9,10 +9,12 @@ export default {
     props: ['id', 'data', 'color'],
       template: `
             <section class="keep-img">
-                <div class="img-container note column flex" :style="{'background-color':color}">
+                <div class="note column flex" :style="{'background-color':color}">
                     ${noteBtns.template}
-                    <div class="note-title">{{data.title}}</div>
-                    <img v-bind:src="data.url" v-bind:title="data.url">       
+                    <div v-if="!showEdit" class="img-container flex column"> 
+                        <div class="note-title">{{data.title}}</div>
+                        <img v-bind:src="data.url" v-bind:title="data.url">   
+                    </div    
                     </img>
                 </div>
             </section>

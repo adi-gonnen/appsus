@@ -3,7 +3,7 @@
 export default {
     template: `
             <section class="note-search flex">
-                <input type="text" placeholder="Search a note" v-model="search" @keydown="searchNote" class="search"/>
+                <input type="text" placeholder="Search a note" v-model="search" @input="searchNote" class="search"/>
             </section>
     `,
 
@@ -16,6 +16,8 @@ export default {
     methods: {
         searchNote() {
             this.$emit('searched', this.search);
+            console.log('search: ', this.search);
+            
         }
     }
 }

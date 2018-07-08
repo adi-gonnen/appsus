@@ -4,14 +4,15 @@ export default {
   template: `
     <section class="note-btn">
     <div class="notes-btns flex">
-        <button class="btn btn-note btn-pin" @click="pinNote">pin</button>
-        <button class="btn btn-note btn-delete" @click="deleteNote">delete</button>
-        <button class="btn btn-note btn-edit" @click="editNote">edit</button>
+        <button class="btn btn-note btn-pin" @click="pinNote"><i class="fas fa-thumbtack"></i></button>
+        <button class="btn btn-note btn-delete" @click="deleteNote"><i class="fas fa-trash-alt"></i></button>
+        <button class="btn btn-note btn-edit" @click="editNote"><i class="fas fa-edit"></i></button>
     </div>
     <component 
         v-if="showEdit" 
-        v-bind:hide-modal="hideModal"
-        v-bind:id="id"
+        :hide-modal="hideModal"
+        :id="id"
+        @hideModal="hideModal"
         :is="addCmpName">
     </component>
     </section>`,
@@ -34,8 +35,9 @@ export default {
       console.log('id::', this.id);
       // keepService.removeNote(this.id);
     },
-    hideModal() {
-      this.showEdit="false"
+    hideModal(bool) {
+      console.log('******');
+      this.showEdit = bool;
     }
 
   }

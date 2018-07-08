@@ -18,12 +18,13 @@ export default {
     },
     template: `
             <section>
-                <h1>keep everything...</h1>
-                <search-note @searched="setSearch"></search-note>
-                <add-note></add-note>
+                <div class="search-add-container flex">
+                    <search-note @searched="setSearch"></search-note>
+                    <add-note></add-note>
+                </div>
                 <div class="keep-app flex" v-if="showNotes">
                 <!-- <router-link to="'/keep'"> -->
-                    <component  :notes="notesToShow" v-for="note in notes" 
+                    <component  :notes="notesToShow" v-for="note in notesToShow" 
                     :is="note.type" 
                     v-bind:data="note.data"
                     v-bind:id="note.id"
@@ -34,11 +35,9 @@ export default {
                 <!-- </router-link> -->
                 </div>
                 <ul>TODO: 
-                    <li>connect routs</li>
-                    <li>cancel button</li>
                     <li>delete confirm alert</li>
-                    <li>clear modal after update</li>
                     <li>add promises</li>
+                    <li>load from storage to cancel</li>
                     <li>search</li>
                     <li>design!!!</li>
                 </ul>   
@@ -55,14 +54,23 @@ export default {
     computed: {
         notesToShow() {
             if (!this.search) return this.notes;
-            else return this.notes.filter(note =>
-                note.data.title.includes(this.search))
+            else {
+                var notesToShow1 = this.notes.filter(note => {
+                    return note.data.title.includes(this.search)
+                })
+                console.log(notesToShow1)
+                return notesToShow1
+            }
         }
+
+
     },
     methods: {
         setSearch(search) {
+            console.log('search!', search);
+
             this.search = search;
         }
-        
+
     },
 }

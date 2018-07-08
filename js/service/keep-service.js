@@ -7,7 +7,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
-        color: '#dada63',
+        color: '#80bbc5',
         data: { 
             title: ':-)',
             text: 'Have A Nice Day',
@@ -16,7 +16,7 @@ var gDefaultNotes = [
     {
         type: 'noteImg',
         id: utilsService.generateId(),
-        color: '#cc5b5b',
+        color: '#e49198',
         data: { 
             title: 'still optimistic',
             url: '././img/us.jpg',
@@ -25,7 +25,7 @@ var gDefaultNotes = [
     {
         type: 'noteTodo',
         id: utilsService.generateId(),
-        color: '#7790e0',
+        color: '#bbe09c',
         data: { 
             title: 'things to do before vacation', 
             list: ['book hotels', 'insurance', 'hire a car'],
@@ -34,7 +34,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
-        color: '#dada63',
+        color: '#80bbc5',
         data: { 
             title: 'important!',
             text: 'go to the beach this weekend',
@@ -43,7 +43,7 @@ var gDefaultNotes = [
     {
         type: 'noteTodo',
         id: utilsService.generateId(),
-        color: '#7790e0',
+        color: '#bbe09c',
         data: { 
             title: 'to buy',
             list: ['milk', 'banana', 'bread'],
@@ -52,7 +52,7 @@ var gDefaultNotes = [
     {
         type: 'noteText',
         id: utilsService.generateId(),
-        color: '#dada63',
+        color: '#80bbc5',
         data: { 
             title: 'summer vacation', 
             text: 'needs to find a location',
@@ -96,11 +96,16 @@ function getNoteById(id) {
     return utilsService.getItemById(id, gNotes);
 }
     
+function getNote() {
+    gNotes = utilsService.loadFromStorage(NOTES_KEY);
+    // return utilsService.getNoteById(id, gNotes)
+}
 export default {
     query,
     removeNote,
     moveNoteUp,
     addNewNote,
     getNoteById,
-    updateNote
+    updateNote,
+    getNote
 }
