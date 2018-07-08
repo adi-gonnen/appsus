@@ -12,8 +12,10 @@ export default {
         <section class="keep-text">
             <div class="text-container note column flex" :style="{'background-color':color}">
                 ${noteBtns.template}
-                <div class="note-title">{{data.title}}</div>
-                <div class="text-body">{{data.text}}</div>
+                <div v-if="!showEdit">
+                    <div class="note-title">{{data.title}}</div>
+                    <div class="text-body">{{data.text}}</div>
+                </div>
             </div>
         </section>
         `,

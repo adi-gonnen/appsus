@@ -1,20 +1,37 @@
 /* **********keep- general********** */
 
+.keep-header {
+    margin: 20px 30px;
+    background-color: #D8D6D8;
+    width: 100%;
+    height: 40px;
+}
+
 .keep-app {
     flex-wrap: wrap;
+    align-items: flex-start;
 }
+
 .notes {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 30px;
 }
 
-.note {
-  
+.add-note {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.add-container {
+    margin: 5px;
+    align-items: center;
+    justify-content: space-between;
 }
 .notes-btns {
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;;
 }
 
 .note-title {
@@ -27,7 +44,9 @@
     margin: 5px;
 }
 
-
+.note {
+    box-shadow: 1px 10px 55px 2px rgba(77,73,77,1);
+}
 /* *******keep-text********* */
 .text-container {
     border: 1px solid black;
@@ -40,13 +59,16 @@
 /* ********keep-image********** */
 
 .img-container {
-    border: 1px solid black;
+    margin: auto;
+    align-items: center;
+    
 }
 .img-container>img {
     width: 90%;
     max-width: 200px;
     height: 150px;
     margin: auto;
+    margin-bottom: 5px;
 }
 
 
@@ -57,11 +79,77 @@
     max-width: 150px;
 }
 
-.note-ul>li {
+.note-ul {
     text-align: left;
 }
+
+.list-container>span {
+    margin: 0 5px;
+}    
+    
 /* *********add-note*********** */
 
 .modal-add-note {
     border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(148, 151, 148);
+    box-shadow: 1px 10px 55px 2px rgba(77,73,77,1);
+    z-index: 3;
+}
+
+.text-title {
+    margin: 10px;
+}
+
+.btn-container {
+    margin: 10px;
+    justify-content: space-between;
+}
+.btns-edit-container>button {
+    height: 25px;
+}
+
+.btn-add-list {
+    width: 50%;
+    margin: auto;
+}
+
+.btn-delete-line {
+    height: 20px;
+    width: 20px;
+    /* margin: 5px; */
+}
+
+.add-line-container>.text-title {
+    margin: 0;
+}
+
+.add-line-container {
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 5px 5px;
+}
+
+.pick-color {
+    height: 25px;
+}
+/* **********search************ */
+.search {
+    margin: 0 30px;
+}
+
+.search-add-container {
+    margin-top: 30px;
+}
+
+@media  (max-width: 500px) {
+    .search-add-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .note-search {
+        margin-bottom: 5px;
+    }
 }

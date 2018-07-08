@@ -11,14 +11,18 @@ export default {
     props: ['id', 'data', 'color'],
     template: `
             <section class="keep-todo">
-            <div class="todo-container note column flex" :style="{'background-color':color}">
-                ${noteBtns.template}
-                <div class="note-title">{{data.title}}</div>
-                <ul v-for="item in data.list" class="note-ul">
-                  <li>{{item}}</li>
-                </ul>
-            </div>
-            <add-todo v-if="showEdit" v-bind:id="id"></add-todo>
+                <div class="todo-container note column flex" :style="{'background-color':color}">
+                    ${noteBtns.template}
+                    <div v-if="!showEdit">
+                        <div class="note-title">{{data.title}}</div>
+                        <ul v-for="item in data.list" class="note-ul">
+                            <li class="list-container flex">
+                                <span><i class="fas fa-caret-right"></i></span>
+                                <div>{{item}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
             `,
     data() {

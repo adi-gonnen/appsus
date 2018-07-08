@@ -1,4 +1,5 @@
 @import './email/e-main.css';
+@import './keep/keep.css';
 
 
 
@@ -58,7 +59,9 @@
     flex-wrap: wrap;
   }
 
-
-.btn {
-    cursor: pointer;
-}
+  .opacity {
+    opacity: 0.1;
+  }
+  .btn {
+      cursor: pointer;
+  }

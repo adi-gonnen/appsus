@@ -18,9 +18,10 @@ export default {
     },
     template: `
             <section>
-                <h1>keep everything...</h1>
-                <search-note @searched="setSearch"></search-note>
-                <add-note></add-note>
+                <div class="search-add-container flex">
+                    <search-note @searched="setSearch"></search-note>
+                    <add-note></add-note>
+                </div>
                 <div class="keep-app flex" v-if="showNotes">
                 <!-- <router-link to="'/keep'"> -->
                     <component  :notes="notesToShow" v-for="note in notes" 
@@ -34,11 +35,9 @@ export default {
                 <!-- </router-link> -->
                 </div>
                 <ul>TODO: 
-                    <li>connect routs</li>
-                    <li>cancel button</li>
                     <li>delete confirm alert</li>
-                    <li>clear modal after update</li>
                     <li>add promises</li>
+                    <li>load from storage to cancel</li>
                     <li>search</li>
                     <li>design!!!</li>
                 </ul>   
