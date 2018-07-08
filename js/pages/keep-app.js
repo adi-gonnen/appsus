@@ -34,14 +34,6 @@ export default {
                     </component>
                 <!-- </router-link> -->
                 </div>
-                <ul>TODO: 
-                    <li>delete confirm alert</li>
-                    <li>add promises</li>
-                    <li>load from storage to cancel</li>
-                    <li>search</li>
-                    <li>design!!!</li>
-                </ul>   
-
             </section>
             `,
     data() {

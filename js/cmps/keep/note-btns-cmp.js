@@ -9,11 +9,10 @@ export default {
         <button class="btn btn-note btn-edit" @click="editNote"><i class="fas fa-edit"></i></button>
     </div>
     <component 
-        v-if="showEdit" 
-        :hide-modal="hideModal"
-        :id="id"
-        @hideModal="hideModal"
-        :is="addCmpName">
+      v-if="showEdit" 
+      :id="id"
+      @showEdit="hideModal"
+      :is="addCmpName">
     </component>
     </section>`,
   data() {
