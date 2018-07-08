@@ -1,0 +1,26 @@
+.e-details {
+  flex-basis: 80%;
+  padding: 2em;
+}
+
+.e-details-header {
+  border-bottom: 1px solid lightgray;
+}
+
+.e-name {
+  font-weight: bold;
+}
+
+.e-date {
+  color: rgb(114, 112, 112);
+  font-size: 0.9em;
+}
+
+.e-details-header-name, .e-details-header-subj {
+  margin-bottom: 15px;
+}
+
+.e-details-container {
+  margin-top: 15px;
+  line-height: 1.3em;
+}

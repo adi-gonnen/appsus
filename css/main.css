@@ -1,13 +1,59 @@
-body {
-    background-color: beige;
-}
+@import './email/e-main.css';
 
 
-/* *****helpers******** */
-.flex {
+
+/* Global ------------ */
+
+* {
+    box-sizing: border-box
+  }
+  
+  body {
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Helpers ------------ */
+  
+  .flex {
     display: flex;
-}
-
-.column {
+  }
+  
+  .space-around {
+    justify-content: space-around;
+  }
+  
+  .space-between {
+    justify-content: space-between;
+  }
+  
+  .column {
     flex-direction: column;
-}
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  
+  .center {
+    justify-content: center;
+  }
+  
+  .flex-end {
+    justify-content: flex-end;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }

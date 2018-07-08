@@ -1,0 +1,46 @@
+
+
+.e-panel-container {
+  background-color: #D8D6D8;
+}
+
+.e-panel-container p, .e-panel-container hr{
+  margin: 0;
+}
+
+.e-panel-container button{
+  padding: 2px 8px 4px;
+  cursor: pointer;
+}
+
+.e-trash:hover {
+  background-color: #FEBF2F;
+}
+
+.e-new:hover {
+  background-color: #29CA42;
+}
+
+.e-exit-app {
+  margin-bottom: 10px;
+}
+
+.e-exit-app button{
+  background-color: white;
+  padding: 2px 8px 4px;
+  border-radius: 3px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.e-exit-app button:hover{
+  background-color: #FE5E57;
+}
+
+.e-nav-app {
+  margin-bottom: 10px;
+}
+
+.e-count {
+  font-size: 0.9em;
+}

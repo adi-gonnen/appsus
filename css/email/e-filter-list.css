@@ -1,0 +1,22 @@
+
+.e-filter-list-container {
+    flex-basis: 20%;
+    overflow: scroll;
+}
+
+.e-envelope {
+  width: 10%;
+}
+
+.e-email-display {
+  width: 90%;
+  border-bottom: 1px solid lightgray;
+}
+
+.e-search {
+  padding: 5px;
+}
+
+.e-sort {
+    padding: 10px;
+}
