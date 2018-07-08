@@ -2,6 +2,8 @@
 import utilsService from '../../../service/utils-service.js';
 import keepService from '../../../service/keep-service.js';
 
+
+
 export default {
     props: ['id'],
     template: `
@@ -13,11 +15,11 @@ export default {
                         <div class="btn-comtainer">
                             <div class="wrapper" v-bind:style="note.color">
                                 <div class="content">
-                                    <input type="text" v-on:input="note.color = $event.target.value" placeholder="write you color"/>
+                                    <input type="color" value="#ff0000" v-on:input="note.color = $event.target.value" placeholder="write your color"/>
                                 </div>
                             </div>
-                        <button class="btn btn-add-note" @click="addNote">update</button>
-                        <button class="btn btn-cancel-note" @click="cancelUpdate">cancel</button>
+                            <button class="btn btn-add-note" @click="addNote">update</button>
+                            <button class="btn btn-cancel-note" @click="cancelUpdate">cancel</button>
                         </div>
                     </div>
                 </div>
@@ -37,14 +39,21 @@ export default {
         }
     },
     created: function () {
-        // console.log('id!! ', this.id);
+    //     console.log('this.$route.params in edit', this.$route);
+    // console.log('this.$route.params in edit', this.$route.params);
+    // const {id} = this.$route.params;
+    if (this.id) {
         var note = keepService.getNoteById(this.id);
-        if (note) this.note = note;
-        console.log('note!! ', this.note);
-    },
-    methods: {
-        addNote() {
-            keepService.updateNote(this.note)
+        keepService.updateNote(note);
+    }
+    else keepService.addNewNote(this.note);
+    
+},
+methods: {
+    addNote() {
+        //move to created- decition if edit or creat new
+            
+
         },
         cancelUpdate() {
 

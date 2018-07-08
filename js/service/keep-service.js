@@ -83,12 +83,15 @@ function moveNoteUp(id) {
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
 
-function updateNote(note) {
-    // console.log(note);
+function addNewNote(note) {
     gNotes.unshift(note);
     utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
-     
+
+function updateNote(note) {
+    utilsService.saveToStorage(NOTES_KEY, gNotes);
+}
+
 function getNoteById(id) {
     return utilsService.getItemById(id, gNotes);
 }
@@ -97,6 +100,7 @@ export default {
     query,
     removeNote,
     moveNoteUp,
-    updateNote,
-    getNoteById
+    addNewNote,
+    getNoteById,
+    updateNote
 }

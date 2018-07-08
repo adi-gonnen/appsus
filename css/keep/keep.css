@@ -1,25 +1,52 @@
 /* **********keep- general********** */
 
-.title {
-    font-weight: bold;
+.keep-app {
+    flex-wrap: wrap;
 }
-
 .notes {
     flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px;
 }
+
+.note {
+  
+}
+.notes-btns {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.note-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+
+}
+.btn-note {
+    margin: 5px;
+}
+
+
 /* *******keep-text********* */
 .text-container {
     border: 1px solid black;
 }
 
+.text-body {
+    text-align: center;
+    margin: 10px;
+}
 /* ********keep-image********** */
 
 .img-container {
     border: 1px solid black;
 }
 .img-container>img {
-    width: 100px;
-    height: 100px;
+    width: 90%;
+    max-width: 200px;
+    height: 150px;
+    margin: auto;
 }
 
 
@@ -27,8 +54,12 @@
 
 .todo-container {
     border: 1px solid black;
+    max-width: 150px;
 }
 
+.note-ul>li {
+    text-align: left;
+}
 /* *********add-note*********** */
 
 .modal-add-note {

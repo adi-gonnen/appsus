@@ -1,33 +1,30 @@
 
 import keepService from '../../service/keep-service.js';
+import addTodo from './add-note/add-todo-cmp.js';
+import noteBtns from './note-btns-cmp.js';
 
 export default {
+    mixins: [noteBtns],
+    components: {
+        addTodo
+    },
     props: ['id', 'data', 'color'],
     template: `
             <section class="keep-todo">
-            <div class="todo-container column flex" :style="{'background-color':color}">
-                <div class="btns">
-                    <button class="btn btn-pin" @click="pinNote">pin</button>
-                    <button class="btn btn-delete" @click="deleteNote">delete</button>
-                    <button class="btn btn-edit">edit</button>
-                </div>
-                <div class="title">{{data.title}}</div>
-                <ul v-for="item in data.list">
+            <div class="todo-container note column flex" :style="{'background-color':color}">
+                ${noteBtns.template}
+                <div class="note-title">{{data.title}}</div>
+                <ul v-for="item in data.list" class="note-ul">
                   <li>{{item}}</li>
                 </ul>
             </div>
+            <add-todo v-if="showEdit" v-bind:id="id"></add-todo>
             </section>
             `,
-    methods: {
-        deleteNote() {
-            keepService.removeNote(this.id);
-            // console.log('id:::', id);
-            
-        },
-        pinNote() {
-            keepService.moveNoteUp(this.id)
+    data() {
+        return {
+            addCmpName : 'add-todo'
         }
-
-    }
+    },
 }
 

@@ -1,35 +1,27 @@
-import keepService from '../../service/keep-service.js';
+import addImg from './add-note/add-img-cmp.js';
+import noteBtns from './note-btns-cmp.js';
 
 export default {
+    mixins: [noteBtns],
+    components: {
+        addImg
+    },
     props: ['id', 'data', 'color'],
       template: `
             <section class="keep-img">
-                <div class="img-container column flex" :style="{'background-color':color}">
-                    <div class="btns">
-                        <button class="btn btn-pin" @click="pinNote">pin</button>
-                        <button class="btn btn-delete" @click="deleteNote">delete</button>
-                        <button class="btn btn-edit" @click="editNote">edit</button>
-                    </div>
-                    <div class="title">{{data.title}}</div>
+                <div class="img-container note column flex" :style="{'background-color':color}">
+                    ${noteBtns.template}
+                    <div class="note-title">{{data.title}}</div>
                     <img v-bind:src="data.url" v-bind:title="data.url">       
                     </img>
                 </div>
             </section>
             `,
-            methods: {
-                deleteNote() {
-                    keepService.removeNote(this.id);
-                    // console.log('id:::', id);
-                    
-                },
-                pinNote() {
-                    keepService.moveNoteUp(this.id);
-                    //  console.log('id:::', id);
-                },
-                editNote() {
-                    keepService.changeNote(this.id);
+            data() {
+                return {
+                    addCmpName : 'add-img'
                 }
-         
-            }
+            },
+            
     
 }

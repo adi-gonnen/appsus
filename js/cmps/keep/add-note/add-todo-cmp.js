@@ -3,6 +3,7 @@ import utilsService from '../../../service/utils-service.js';
 import keepService from '../../../service/keep-service.js';
 
 export default {
+    props: ['id'],
     template: `
             <section class="add-text flex">
                 <div class="modal-add-note flex">
@@ -11,12 +12,16 @@ export default {
                         <ul v-for="(item,index) in note.data.list" class="todo-list">
                             <li>
                               <input class="text-title" v-model="note.data.list[index]"></input>
-                              <button class="btn btn-delete-line" :index="index" @click="deleteLine">X</button>
+                              <button class="btn btn-delete-line" @click="deleteLine(index)">X</button>
                             </li>
                         </ul>
                         <div class="btns-list flex">
+                            <div class="content">
+                                <input type="color" value="#ff0000" v-on:input="note.color = $event.target.value" placeholder="write your color"/>
+                            </div>
                             <button class="btn btn-add-list" @click="addLine">+</button>
-                            <button class="btn btn-add-note" @click="addNote">update</button>
+                            <button class="btn btn-add-note" @click="saveNote">update</button>
+                            <button class="btn btn-cancel-note" @click="cancelUpdate">cancel</button>
                         </div>
                     </div>
                 </div>
@@ -35,28 +40,31 @@ export default {
             },
         }
     },
-    methods: {
-        addNote() {
-            keepService.updateNote(this.note);
-            // console.log('note: ', this.note);
-            this.note = {
-                type: 'noteTodo',
-                id: utilsService.generateId(),
-                color: '##7790e0',
-                data: { 
-                    title: '',
-                    list: [],
-                    }
-            };
-            // console.log('note: ', this.note);
+    created: function () {
+        //     console.log('this.$route.params in edit', this.$route);
+        // console.log('this.$route.params in edit', this.$route.params);
+        // const {id} = this.$route.params;
+            
+            // console.log('id!! ', this.id);
+            if (this.id) {
+                var note = keepService.getNoteById(this.id);
+                keepService.updateNote(note);
+            }
+            else keepService.addNewNote(this.note);
+            
+    
         },
+    methods: {
+       
         addLine() {
             this.note.data.list.push('');
         },
-        deleteLine() {
-            console.log('index: ', this.index, this.value);
+        deleteLine(index) {
+            console.log('index: ', index);
+            this.note.data.list.splice(index, 1);
+        },
+        cancelUpdate() {
             
-            this.note.data.list.splice(this.index, 1);
         }
     }
 }

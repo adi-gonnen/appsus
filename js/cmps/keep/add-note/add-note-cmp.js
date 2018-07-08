@@ -12,28 +12,22 @@ export default {
     template: `
             <section class="add-note flex">
                 <p>add a new note:</p>
-                    <select id="add-note" v-model="addType" class="add-note" @onkeydown="addNote">
+                    <select id="add-note" v-model="addType" class="add-note">
                         <option value="addText">memo</option>
                         <option value="addImg">image</option>
                         <option value="addTodo">list</option>
                     </select>
                 <component v-if="addType"
-                           :v-bind="id"
                            :is="addType"
                            class="new-notes flex">
                 </component>
+                <router-link :to="'/keep/edit/'"></router-link>
             </section>
             `,
     data: () => {
             return {
                 addType: null,
-                showNotes: true
             }
     },
-    methods: {
-        addNote() {
-           this.$emit('showNotes', false)
-        }
-    }
     
 }
