@@ -1,23 +1,26 @@
 
-import textService from '../../service/keep/text-service.js';
+import addText from './add-note/add-text-cmp.js';
+import noteBtns from './note-btns-cmp.js';
 
 export default {
+    mixins: [noteBtns],
+    components: {
+        addText
+    },
+    props: ['id', 'data', 'color'],
     template: `
-            <section class="keep-text">
-                <div v-for="text in texts" class="text-container column flex">
-                    <div class="text-title">{{text.title}}</div>
-                    <div>{{text.body}}</div>
-                </div>
-            </section>
-            `, 
+        <section class="keep-text">
+            <div class="text-container note column flex" :style="{'background-color':color}">
+                ${noteBtns.template}
+                <div class="note-title">{{data.title}}</div>
+                <div class="text-body">{{data.text}}</div>
+            </div>
+        </section>
+        `,
     data() {
         return {
-            texts: textService.query()
-        }
-    },
-    methodes: {
-        loadTexts() {
-            
+            addCmpName : 'add-text'
         }
     }
+        
 }

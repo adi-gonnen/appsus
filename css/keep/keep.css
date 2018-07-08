@@ -1,26 +1,67 @@
 /* **********keep- general********** */
 
+.keep-app {
+    flex-wrap: wrap;
+}
+.notes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.note {
+  
+}
+.notes-btns {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.note-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+
+}
+.btn-note {
+    margin: 5px;
+}
+
+
 /* *******keep-text********* */
 .text-container {
     border: 1px solid black;
 }
 
-.text-title {
-    font-weight: bold;
+.text-body {
+    text-align: center;
+    margin: 10px;
 }
-
 /* ********keep-image********** */
 
 .img-container {
     border: 1px solid black;
 }
-.note-img {
-    width: 100px;
-    height: 100px;
+.img-container>img {
+    width: 90%;
+    max-width: 200px;
+    height: 150px;
+    margin: auto;
 }
+
 
 /* **********keep-todo*************** */
 
 .todo-container {
+    border: 1px solid black;
+    max-width: 150px;
+}
+
+.note-ul>li {
+    text-align: left;
+}
+/* *********add-note*********** */
+
+.modal-add-note {
     border: 1px solid black;
 }

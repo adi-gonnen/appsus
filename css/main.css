@@ -57,3 +57,8 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
+
+
+.btn {
+    cursor: pointer;
+}
