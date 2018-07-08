@@ -85,7 +85,7 @@ function moveNoteUp(id) {
 
 function addNewNote(note) {
     gNotes.unshift(note);
-    utilsService.saveToStorage(NOTES_KEY, gNotes);
+    // utilsService.saveToStorage(NOTES_KEY, gNotes);
 }
 
 function updateNote(note) {

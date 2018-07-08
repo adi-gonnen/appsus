@@ -44,16 +44,16 @@ export default {
     // const {id} = this.$route.params;
     if (this.id) {
         var note = keepService.getNoteById(this.id);
-        keepService.updateNote(note);
+        this.note = note;
     }
-    else keepService.addNewNote(this.note);
     
 },
 methods: {
     addNote() {
         //move to created- decition if edit or creat new
-            
-
+        if (!this.id) keepService.addNewNote(this.note);
+        keepService.updateNote(this.note);
+        this.$emit('completeEdit', false)        
         },
         cancelUpdate() {
 

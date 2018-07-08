@@ -42,14 +42,19 @@ export default {
             
         if (this.id) {
             var note = keepService.getNoteById(this.id);
-            keepService.updateNote(note);
+            this.note = note;
         }
         else keepService.addNewNote(this.note);
         
     
         },
     methods: {
-        
+        addNote() {
+            //move to created- decition if edit or creat new
+            keepService.updateNote(this.note);
+                
+    
+            },
         cancelUpdate() {
             
         }

@@ -10,6 +10,7 @@ export default {
     </div>
     <component 
         v-if="showEdit" 
+        v-bind:completeEdit="showEdit"
         v-bind:id="id"
         :is="addCmpName">
     </component>
