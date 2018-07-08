@@ -49,8 +49,10 @@ s                    </div>
             this.$emit('hideModal', false);      
         },
         cancelUpdate() {
+            
             keepService.getNote()
             this.$emit('hideModal', false);
+            console.log('88888888888');
         },
         changeColor() {
             this.color = $emit.target

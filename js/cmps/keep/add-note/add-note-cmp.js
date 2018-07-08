@@ -31,5 +31,9 @@ export default {
                 addType: null,
             }
     },
+    created: function () {
+        if (this.addType) {
+        }
+    }
     
 }

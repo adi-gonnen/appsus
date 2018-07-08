@@ -24,7 +24,7 @@ export default {
                 </div>
                 <div class="keep-app flex" v-if="showNotes">
                 <!-- <router-link to="'/keep'"> -->
-                    <component  :notes="notesToShow" v-for="note in notes" 
+                    <component  :notes="notesToShow" v-for="note in notesToShow" 
                     :is="note.type" 
                     v-bind:data="note.data"
                     v-bind:id="note.id"
@@ -54,14 +54,23 @@ export default {
     computed: {
         notesToShow() {
             if (!this.search) return this.notes;
-            else return this.notes.filter(note =>
-                note.data.title.includes(this.search))
+            else {
+                var notesToShow1 = this.notes.filter(note => {
+                    return note.data.title.includes(this.search)
+                })
+                console.log(notesToShow1)
+                return notesToShow1
+            }
         }
+
+
     },
     methods: {
         setSearch(search) {
+            console.log('search!', search);
+
             this.search = search;
         }
-        
+
     },
 }

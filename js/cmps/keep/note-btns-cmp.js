@@ -10,8 +10,8 @@ export default {
     </div>
     <component 
         v-if="showEdit" 
-        v-bind:hide-modal="hideModal"
-        v-bind:id="id"
+        :hide-modal="hideModal"
+        :id="id"
         @hideModal="hideModal"
         :is="addCmpName">
     </component>
@@ -36,6 +36,7 @@ export default {
       // keepService.removeNote(this.id);
     },
     hideModal(bool) {
+      console.log('******');
       this.showEdit = bool;
     }
 

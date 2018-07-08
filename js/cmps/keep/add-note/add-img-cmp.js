@@ -43,7 +43,7 @@ export default {
         addNote() {
             if (!this.id) keepService.addNewNote(this.note);
             keepService.updateNote(this.note);
-            this.$emit('hideModal', false);      
+            this.$emit('hideModal', false);   
             },
         cancelUpdate() {
             this.$emit('hideModal', false);
