@@ -1,5 +1,16 @@
 /* **********keep- general********** */
 
+.exit-keep{
+    padding: 2px 8px 4px;
+    border-radius: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+  
+.exit-keep:hover{
+    background-color: #FE5E57;
+}
+
 .keep-header {
     margin: 20px 30px;
     background-color: #D8D6D8;

@@ -18,6 +18,7 @@ export default {
     },
     template: `
             <section>
+                <div><button class="exit-keep" @click="exitKeepApp">X</button></div>
                 <div class="search-add-container flex">
                     <search-note @searched="setSearch"></search-note>
                     <add-note></add-note>
@@ -70,6 +71,9 @@ export default {
             console.log('search!', search);
 
             this.search = search;
+        },
+        exitKeepApp() {
+            this.$router.push('/')
         }
 
     },
