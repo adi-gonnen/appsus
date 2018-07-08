@@ -34,31 +34,25 @@ export default {
         }
     },
     created: function () {
-        //     console.log('this.$route.params in edit', this.$route);
-        // console.log('this.$route.params in edit', this.$route.params);
-        // const {id} = this.$route.params;
-            
         if (this.id) {
             var note = keepService.getNoteById(this.id);
             this.note = note;
         }
-        
-    
-        },
-        methods: {
-            addNote() {
-                if (!this.id) keepService.addNewNote(this.note);
-                keepService.updateNote(this.note);
-                this.$emit('hideModal', false);      
-                },
-            cancelUpdate() {
-                this.$emit('hideModal', false);
+    },
+    methods: {
+        addNote() {
+            if (!this.id) keepService.addNewNote(this.note);
+            keepService.updateNote(this.note);
+            this.$emit('hideModal', false);      
             },
-            changeColor() {
-                this.color = $emit.target
-                console.log($emit.target.value);
-        
-            }
-            
+        cancelUpdate() {
+            this.$emit('hideModal', false);
+        },
+        changeColor() {
+            this.color = $emit.target
+            console.log($emit.target.value);
+    
         }
+        
+    }
 }
